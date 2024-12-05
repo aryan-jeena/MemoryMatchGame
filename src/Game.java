@@ -270,7 +270,7 @@ public class Game {
             }
             ArrayList<JButton> enabledButtons = model.getButtons().stream()
                     .filter(Component::isEnabled)
-                    .collect(Collectors.toList());
+                    .collect(Collectors.toCollection(ArrayList::new));
             if (enabledButtons.isEmpty()) {
                 controller.reset(new Model(controller.getModel().getColumns()));
                 JOptionPane.showMessageDialog(window, "Congrats, you won!");

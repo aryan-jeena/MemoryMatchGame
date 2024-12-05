@@ -300,6 +300,10 @@ public class Game {
                 if (resourceStream != null) {
                     ImageInputStream imageStream = ImageIO.createImageInputStream(resourceStream);
                     image = ImageIO.read(imageStream);
+                    // Resize image to 120x120 pixels
+                    if (image != null) {
+                        image = image.getScaledInstance(120, 120, Image.SCALE_SMOOTH);
+                    }
                 }
             } catch (IOException e) {
                 e.printStackTrace();
